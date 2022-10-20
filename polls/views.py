@@ -4,6 +4,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Choice, Question
 from django.urls import reverse
 from django.views import generic
+def home(request):
+    return render(request, 'main.html')
+
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
